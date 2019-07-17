@@ -28,6 +28,13 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 REST_FRAMEWORK = {
+     'DEFAULT_PARSER_CLASSES': (
+    'rest_framework_xml.parsers.XMLParser',
+  ),
+    'DEFAULT_RENDERER_CLASSES': (
+    'rest_framework_xml.renderers.XMLRenderer',
+  ),
+
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
@@ -36,6 +43,7 @@ REST_FRAMEWORK = {
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework_xml',
     'rest_framework',
     'quickstart',
     'snippets.apps.SnippetsConfig',

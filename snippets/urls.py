@@ -7,5 +7,5 @@ urlpatterns = [
     path('snippets/<int:pk>/', views.snippet_detail),
 ]
 
-urlpatterns  = format_suffix_patterns(urlpatterns)
+urlpatterns  = format_suffix_patterns(urlpatterns, allowed = ['json','xml','html'])
 
